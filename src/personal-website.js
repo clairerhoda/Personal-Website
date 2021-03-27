@@ -9,10 +9,10 @@ import flutter from './flutter.png'
 import github from './github.png'
 import arcText from './troygram.png'
 import arcText1 from './troygram1.png'
-import element1 from './element1.jpeg'
-
-import React, { useEffect, useState, keyPress} from 'react';
+import profile1 from './profile1.png'
+import React, { useEffect, useState} from 'react';
 import './personal-website.css';
+import {elementGet, addEvent} from './personal-website-animate.js';
 
 function App() {
   const info = useState(null)
@@ -34,41 +34,29 @@ function App() {
       behavior: "smooth",
     });
   }
-  var name = ['c','l','a','i','r','e']
   const scrollDownArrow = () => {
     company.current.scrollIntoView({
       behavior: "smooth",
     });
   }
- 
+  var element = elementGet();
+
   addEvent(document, "keypress", function (e) {
     e = e || window.event;
-    if (e.key == name[0]) {
-      name.shift();
+    if (e.key === element[0]) {
+      element.shift();
     }
     else{
-      name = name = ['c','l','a','i','r','e']
+      element = elementGet()
     }
-    if (name.length === 0){
-      console.log("hit")
-      var x = document.getElementById("element1");
+    if (element.length === 0){
+      var x = document.getElementById("profile1");
       x.style.display = "block";
-      x.style.animation = "fadeIn ease 10s";
-
+      x.style.animation = "fadeIn ease 15s";
     }
-    console.log(name)
+
   });
 
-function addEvent(element, eventName, callback) {
-    if (element.addEventListener) {
-        element.addEventListener(eventName, callback, false);
-    } else if (element.attachEvent) {
-        element.attachEvent("on" + eventName, callback);
-    } else {
-        element["on" + eventName] = callback;
-    }
-}
-  
   const openNavButtons = () => {
     var x = document.getElementById("drop-down");
     if (x.style.display === "none") {
@@ -88,7 +76,6 @@ function addEvent(element, eventName, callback) {
       window.onscroll = () => {
         let currentScrollPos = window.pageYOffset;
         let maxScroll = document.body.scrollHeight - window.innerHeight;
-        console.log(currentScrollPos)
         if (currentScrollPos > 40 && currentScrollPos < maxScroll) {
           setHeight(4.5);
           setFontSize(1.5)
@@ -104,7 +91,7 @@ function addEvent(element, eventName, callback) {
   
   return (
     <div className="App">
-      <div id="element1" style = {{display: `${'none'}`}}><img id="element2" src={element1} /></div>
+      <div id="profile1" style = {{display: `${'none'}`}}><img id="profile2" src={profile1} alt="profile1"/></div>
       <header className="App-header" style = {{height: `${height}rem`}}>
         <div id="spacer1" style = {{height: `${height}rem`}}></div>
         <div className="title-container">
@@ -135,7 +122,7 @@ function addEvent(element, eventName, callback) {
             <div className="profile-container">
               <div id="decoration"></div>
               <div id="white-slash">///////////////////////////////</div>
-              <img src={profile} className="profile-photo" alt="profile photo"/>
+              <img src={profile} className="profile-photo" alt="profile"/>
             </div>
             <div className="script">
               <div id="opening" >Hello,</div>
@@ -166,7 +153,7 @@ function addEvent(element, eventName, callback) {
                 </div>
               </div>
               <div id="img-pic-container">
-                <img src={company_pic} className="work-photo" alt="team photo"/>
+                <img src={company_pic} className="work-photo" alt="team"/>
               </div>
           </div>
           </div>
@@ -179,22 +166,22 @@ function addEvent(element, eventName, callback) {
                   <div className="skills-title">Languages</div>
                 </div>
                 <div className="img-row">
-                  <div><img id="code-img" src={html5} alt="html5 photo"/>
+                  <div><img id="code-img" src={html5} alt="html5"/>
                   <div id="icon-titles">HTML</div>
                   </div>
-                  <div><img id="code-img" src={css} alt="css photo"/>
+                  <div><img id="code-img" src={css} alt="css"/>
                   <div id="icon-titles">CSS</div>
                   </div>
-                  <div><img id="code-img" src={javascript} alt="javascript photo"/>
+                  <div><img id="code-img" src={javascript} alt="javascript"/>
                     <div id="icon-titles">JavaScript</div>
                   </div>
-                  <div><img id="code-img" src={cplusplus} alt="c plus plus photo"/>
+                  <div><img id="code-img" src={cplusplus} alt="c plus plus"/>
                     <div id="icon-titles">C++</div>
                   </div>
-                  <div><img id="code-img" src={flutter} alt="flutter photo"/>
+                  <div><img id="code-img" src={flutter} alt="flutter"/>
                     <div id="icon-titles">Flutter</div>
                   </div>
-                  <div><img id="code-img" src={dart} alt="dart photo"/>
+                  <div><img id="code-img" src={dart} alt="dart "/>
                     <div id="icon-titles">Dart</div>
                   </div>                  
                 </div>
@@ -205,9 +192,9 @@ function addEvent(element, eventName, callback) {
               <div className="github-box">
                 <div id="decoration4">||||||||||||||||||||||||||||||||||||||||||||</div>
                 <a href="https://github.com/clairerhoda">
-                <img id="arc-text" src={arcText}/>
-                <img id="arc-text1" src={arcText1}/>
-                  <img id="github" src={github}  alt="github photo" />
+                <img id="arc-text" src={arcText} alt="arc text"/>
+                <img id="arc-text1" src={arcText1} alt="arc text"/>
+                  <img id="github" src={github}  alt="github" />
                 </a>
               </div>
           </div>
