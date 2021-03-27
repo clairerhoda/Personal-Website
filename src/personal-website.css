@@ -596,7 +596,7 @@ a:link, a:visited, a:hover, a:active {
 
 @media (max-width:851px) {
   #opening2 {text-align: center;}
-  .info-box {flex-direction: column; width: 100%; padding:0}
+  .info-box {flex-direction: column; width: 100%; padding:0; margin-bottom: 5rem;}
   #company-info {flex-direction: column;}
   .profile-container {order:1; margin-top: 8rem; justify-content: center;}
   .profile-photo{margin-left: 0}
