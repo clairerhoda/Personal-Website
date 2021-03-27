@@ -142,8 +142,8 @@ function App() {
               <div id="opening" >Hello,</div>
               <div id="line-decoration"></div>
               <div id="opening1">I'm Claire Rhoda.</div>
-              <div id="opening3">I am a Software Developer and current intern</div>
-              <div id="opening3">at Apartment 304.</div>
+              <div id="opening2">I am a Software Developer and current intern</div>
+              <div id="opening2">at Apartment 304.</div>
               <br></br>
               <div id="about-me-description"><i class='fas fa-map-marker-alt'></i> &nbsp; Orange County, California</div>
               <div id="about-me-description">Front-end</div>
@@ -210,7 +210,6 @@ function App() {
                 <img id="arc-text1" src={arcText1}/>
                   <img id="github" src={github}  alt="github photo" />
                 </a>
-                
               </div>
           </div>
           <div className="center">

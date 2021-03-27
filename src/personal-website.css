@@ -8,19 +8,26 @@ html, body{
   min-height: 50vh;
   background-color: #ffffff;
   user-select:none;  
+  margin:0;
+  padding:0;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 @keyframes slideLeft {
   0% {margin-right: 200%;}
   100%{margin-right: 0;}
-  }
-  @keyframes slideRight {
-    0% {margin-left: 200%;}
-    100%{margin-left: 0;}
-    }
+}
+
+@keyframes slideRight {
+  0% {margin-left: 200%;}
+  100%{margin-left: 0;}
+}
+
 button:focus {
     outline: none;
 }
+
 .App-header {
   background-color: rgb(247, 248, 245);
   display: flex;
@@ -49,7 +56,7 @@ button:focus {
   0% {bottom: 5px;}
   50%{bottom: 0px;}
   100%{bottom: 5px;}
-  }
+}
 
 .center {
   width: 100%;
@@ -78,12 +85,13 @@ button:focus {
 @keyframes slideInLeft {
   0% {right: 500px;opacity:0;}
   100%{right: 0px;opacity:1}
-  }
+}
 
 @keyframes slideInRight {
   0% {right: -90px; opacity:0;}
   100%{right: 0px;opacity:1}
 }
+
 @keyframes slideOutRight {
   0% {right: 0px; opacity:1;}
   100%{right: -90px;opacity:0}
@@ -137,7 +145,7 @@ button:focus {
 }
 
 .btn-nav:focus {
-    outline: none;
+  outline: none;
 }
 
 #contact-me-nav{
@@ -158,14 +166,13 @@ button:focus {
   border-right: 2px rgb(199, 219, 163) solid;
   animation: clips 2.5s ease-in-out infinite;
 }
+
 @keyframes clips {
   50% {
     border-radius: 100% 100% 80% 90%;
     transform: rotate(-20deg);
   }
 }
-
-
 
 .info-box {
   display: flex;
@@ -226,6 +233,7 @@ button:focus {
   display: flex;
   flex-direction: row;
 }
+
 .script{
   display: flex;
   flex-direction: column;
@@ -243,6 +251,7 @@ button:focus {
   color: rgb(170, 189, 135);
   text-shadow: 4px 2.5px rgb(223, 230, 215);
 }
+
 #opening1 {
   width: 100%;
   font-size: 35px;
@@ -252,16 +261,17 @@ button:focus {
   text-align: end;
   margin-bottom: 1rem;
 }
-#opening3 {
+
+#opening2 {
   width: 100%;
   font-size: 20px;
   font-family: Rambla;
   font-weight: bold;
   color: rgb(81, 83, 76) ;
   text-align: end;
-  line-height: 0.5rem;
-  margin-bottom: 1rem;
+  line-height: 1.5rem;
 }
+
 #about-me-description {
   width: 100%;
   font-size: 16px;
@@ -269,6 +279,7 @@ button:focus {
   text-align: end;
   font-family: Rubik;
 }
+
 #company-info {
   margin: 3rem 0 0 0;
   display: flex;
@@ -276,6 +287,7 @@ button:focus {
   width: 100%;
   justify-content: center;
 }
+
 .logo-descrip-container{
   display: flex;
   flex-direction: column;
@@ -306,6 +318,7 @@ button:focus {
   justify-content: center;
   z-index: 2;
 }
+
 #decoration1 {
   width: 40rem;
   height: 20rem;
@@ -317,6 +330,7 @@ button:focus {
   display: flex;
   flex-direction: row;
 }
+
 #decoration2 {
   width: 100%;
   height: 10rem;
@@ -345,23 +359,13 @@ button:focus {
   z-index: 3;
 
 }
-/* #company-description1{
-  margin: 5rem 0 1rem 0;
-  font-family: Rubik;
-  text-align: center;
-  width: 85%;
-  height: 5rem;
-  color: rgb(91, 91, 122);
-  display: flex;
-  align-items: center;
-  background-color: rgb(220, 228, 201);
-} */
 
 #skills, #contact {
   display: flex;
   width: 100%;
   justify-content: center;
 }
+
 .skills-box {
   display: flex;
   flex-direction: column;
@@ -377,6 +381,7 @@ button:focus {
   align-self: center;
   flex-direction: column;
 }
+
 #white-slash1 {
   color: rgba(255, 255, 255, 0.836);
   margin-right: 1rem;
@@ -385,6 +390,7 @@ button:focus {
   position: absolute;
   font-size: 2rem;
 }
+
 .skills-title {
   color: rgb(66, 57, 14);
   font-family: Mukta;
@@ -396,7 +402,7 @@ button:focus {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(218, 219, 163, 0.411);
+  background-color: rgba(219, 211, 163, 0.541);
   height: 5rem;
   align-self: center;
 }
@@ -434,6 +440,7 @@ button:focus {
   padding: 1.5rem 0 1.5rem 0;
   align-items: center;
 }
+
 #decoration4{
   display: flex;
   width: 80%;
@@ -447,18 +454,21 @@ button:focus {
   font-size: 1rem;
   justify-content: center;
 }
+
 #github {
   display: flex;
   width: 10rem;
   height: auto;
   align-self: center;
 }
+
 #arc-text{
   height: 3.75rem;
   position: absolute;
   margin-top: -0.8rem;
   margin-left: -0.15rem;
 }
+
 #arc-text1{
   height: 1.6rem;
   position: absolute;
@@ -506,8 +516,8 @@ a:link, a:visited, a:hover, a:active {
   font-family: Rambla;
   font-size: 0.9rem;
   transition: background-color ease 0.5s;
-
 }
+
 #email-button:hover {
   background-color: rgb(210, 226, 179);
   transition: background-color ease 0.5s;
@@ -517,6 +527,7 @@ a:link, a:visited, a:hover, a:active {
   color:rgb(255, 255, 255);
   font-size: 1.3rem;
 }
+
 #email-caption{
   margin-top: 0.2rem;
   margin-bottom: 0.2rem;
@@ -524,13 +535,13 @@ a:link, a:visited, a:hover, a:active {
   color: white;
   text-align: center;
 }
+
 .rights-box {
   margin-bottom: 2rem;
   font-size: 1rem;
   font-family: Mukta;
   color: rgb(66, 57, 14);
 }
-
 
 #drop-down-btn {
   background-color: rgba(255, 255, 255, 0);
@@ -555,6 +566,7 @@ a:link, a:visited, a:hover, a:active {
   padding: 0.1rem;
   background-color: rgb(71, 45, 23);
 }
+
 #drop-down {
   background-color: rgb(220, 240, 197);
   flex-direction: column;
@@ -567,13 +579,15 @@ a:link, a:visited, a:hover, a:active {
   animation: slideInRight ease-in 0.4s;
   border-radius: 10% 0% 0% 10%;
 }
+
 #btn-drop-line {
   width: 100%;
   height: 0.1rem;
   background-color: rgb(199, 219, 163);
 }
+
 @media (max-width:850px) {
-  .btn-nav{font-size: 13px !important; width: 100%; justify-content: flex-start;}
+  .btn-nav{font-size: 0.9rem; width: 100%; justify-content: flex-start;}
   #icon-titles {padding-bottom: 2rem}
   .button-nav {display:none;}
   #contact-me-nav:after{display: none;}
@@ -581,21 +595,26 @@ a:link, a:visited, a:hover, a:active {
 }
 
 @media (max-width:851px) {
-  #opening3 {text-align: center;}
+  #opening2 {text-align: center;}
   .info-box {flex-direction: column; width: 100%; padding:0}
   #company-info {flex-direction: column;}
-  .profile-container {order:1; margin-top: 10rem; justify-content: center;}
-  #white-slash{margin-left: 19rem; margin-top: 9rem;}
-  #decoration{transform: rotate(180deg); margin-left: 8rem; margin-top: 2rem;}
+  .profile-container {order:1; margin-top: 8rem; justify-content: center;}
+  .profile-photo{margin-left: 0}
+  #white-slash{margin-left: 16.5rem; margin-top: 9rem;}
+  #decoration{transform: rotate(180deg); margin-left: 4rem; margin-top: 1.5rem;}
   .script{order:0; align-items: center;align-self: center;margin-bottom: 2rem;}
   #opening{text-align: start;}
   #opening1{text-align: center;}
   #about-me-description{text-align: center;}
-  #line-decoration{margin-left: -0.5rem}
+  #line-decoration{margin-left: -0.3rem}
   #img-pic-container {width:25rem}
   .logo-descrip-container{width:70%}
+  #company-description{font-size: 1rem;}
   #decoration1 {height:25rem;width:85%; margin-left:7.6%; margin-top: -14rem;}
   #decoration2 {margin-top: 10rem}
+  #white-slash1{margin-left: -8rem; font-size: 1.9rem;}
+  .skills-title-container{width:100%; }
+  .skills-title{width:100%; font-size: 1.3rem; height: 3rem}
 }
 
 @media (min-width:1000px) {
@@ -612,3 +631,10 @@ a:link, a:visited, a:hover, a:active {
   #skills{width: 75rem}
 }
 
+@media (max-width:450px) {
+  .profile-photo{height: 20rem; margin-left: 0; }
+  #img-pic-container{width:20rem;}
+  #white-slash{margin-left: 13.5rem; margin-top: 9rem;}
+  #decoration{height:20rem; width: 14rem;margin-left: 3rem; margin-top: 1.5rem;}
+  #opening2{width: 70%;}
+}
