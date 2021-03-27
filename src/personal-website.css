@@ -134,7 +134,7 @@ button:focus {
   background-color: transparent;
   font-family: Mukta;
   font-weight: bold;
-  height: 1.7rem;
+  height: 30px;
   font-size: 15px;
   transition: color ease-in 0.2s;
 }
@@ -210,7 +210,7 @@ button:focus {
 }
 
 .profile-container {
-  width: auto;
+  width: 100%;
   display: flex;
   order: 0
 }
@@ -582,7 +582,7 @@ a:link, a:visited, a:hover, a:active {
 
 #btn-drop-line {
   width: 100%;
-  height: 0.1rem;
+  height: 2px;
   background-color: rgb(199, 219, 163);
 }
 
@@ -596,7 +596,7 @@ a:link, a:visited, a:hover, a:active {
 
 @media (max-width:851px) {
   #opening2 {text-align: center;}
-  .info-box {flex-direction: column; width: 100%; padding:0; margin-bottom: 5rem;}
+  .info-box {flex-direction: column; width: 100%; padding:0}
   #company-info {flex-direction: column;}
   .profile-container {order:1; margin-top: 8rem; justify-content: center;}
   .profile-photo{margin-left: 0}
@@ -615,6 +615,10 @@ a:link, a:visited, a:hover, a:active {
   #white-slash1{margin-left: -8rem; font-size: 1.9rem;}
   .skills-title-container{width:100%; }
   .skills-title{width:100%; font-size: 1.3rem; height: 3rem}
+  #decoration1 {display: none}
+  #work-logo{background-color: rgba(219, 211, 163, 0.541); padding: 1rem;}
+  .btn-nav{border-radius: 5%;border-bottom: 1px rgb(137, 148, 98) solid;}
+
 }
 
 @media (min-width:1000px) {
@@ -634,7 +638,7 @@ a:link, a:visited, a:hover, a:active {
 @media (max-width:450px) {
   .profile-photo{height: 20rem; margin-left: 0; }
   #img-pic-container{width:20rem;}
-  #white-slash{margin-left: 13.5rem; margin-top: 9rem;}
+  #white-slash{display: none}
   #decoration{height:20rem; width: 14rem;margin-left: 3rem; margin-top: 1.5rem;}
   #opening2{width: 70%;}
 }

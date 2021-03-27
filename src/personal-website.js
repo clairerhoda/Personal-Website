@@ -117,10 +117,8 @@ function App() {
         </button>
         <div id="drop-down" style = {{display: `${'none'}`}}> 
           <button onClick={executeScroll1} id="about-me-nav" className="btn-nav" type="button">About Me</button>
-          <div id="btn-drop-line" ></div>
-          <button onClick={executeScroll2} id="skills-nav" className="btn-nav" type="button">Skills</button>
-          <div id="btn-drop-line" ></div>
-          <button onClick={executeScroll3} id="contact-me-nav" className="btn-nav" type="button">Contact Me</button>
+          <button onClick={executeScroll2} style={{marginTop: `3px`,marginBottom: `0px`}}id="skills-nav" className="btn-nav" type="button">Skills</button>
+          <button onClick={executeScroll3} style={{borderBottom: `none`}}id="contact-me-nav" className="btn-nav" type="button">Contact Me</button>
         </div>
         <div className="button-nav" >
           <button onClick={executeScroll1} id="about-me-nav" className="btn-nav" type="button">About Me</button>
