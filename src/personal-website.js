@@ -9,35 +9,10 @@ import flutter from './flutter.png'
 import github from './github.png'
 import arcText from './troygram.png'
 import arcText1 from './troygram1.png'
-import React, { useEffect, useState } from 'react';
+import element1 from './element1.jpeg'
+
+import React, { useEffect, useState, keyPress} from 'react';
 import './personal-website.css';
-
-function useKey(key) {
-  // Keep track of key state
-  const [pressed, setPressed] = useState(false)
-  let error = [onDown, onUp]
-
-  // Does an event match the key we're watching?
-  const match = event => key.toLowerCase() == event.key.toLowerCase()
-  // Event handlers
-  const onDown = event => {
-      if (match(event)) setPressed(true)
-      console.log(onDown)
-  }
-  const onUp = event => {
-      if (match(event)) setPressed(true)
-  }
-  // Bind and unbind events
-  useEffect(() => {
-      window.addEventListener("keydown", onDown)
-      window.addEventListener("keyup", onUp)
-      return () => {
-          window.removeEventListener("keydown", onDown)
-          window.removeEventListener("keyup", onUp)
-      }
-  }, [key])
-  return pressed
-}
 
 function App() {
   const info = useState(null)
@@ -59,15 +34,43 @@ function App() {
       behavior: "smooth",
     });
   }
+  var name = ['c','l','a','i','r','e']
   const scrollDownArrow = () => {
     company.current.scrollIntoView({
       behavior: "smooth",
     });
   }
+ 
+  addEvent(document, "keypress", function (e) {
+    e = e || window.event;
+    if (e.key == name[0]) {
+      name.shift();
+    }
+    else{
+      name = name = ['c','l','a','i','r','e']
+    }
+    if (name.length === 0){
+      console.log("hit")
+      var x = document.getElementById("element1");
+      x.style.display = "block";
+      x.style.animation = "fadeIn ease 10s";
+
+    }
+    console.log(name)
+  });
+
+function addEvent(element, eventName, callback) {
+    if (element.addEventListener) {
+        element.addEventListener(eventName, callback, false);
+    } else if (element.attachEvent) {
+        element.attachEvent("on" + eventName, callback);
+    } else {
+        element["on" + eventName] = callback;
+    }
+}
+  
   const openNavButtons = () => {
     var x = document.getElementById("drop-down");
-    console.log(x.style.display )
-
     if (x.style.display === "none") {
       x.style.display = "block";
       x.style.animation = "slideInRight ease-in 0.4s";
@@ -77,9 +80,8 @@ function App() {
     }
   }
 
-
   const [height, setHeight] = useState(7.5);
-  const [fontSize, setFontSize] = useState(2);
+  const [transform, setFontSize] = useState(1.9);
   const [display, setDisplay] = useState('content');
   useEffect( () => { 
       if (typeof window !== "undefined") {
@@ -89,26 +91,25 @@ function App() {
         console.log(currentScrollPos)
         if (currentScrollPos > 40 && currentScrollPos < maxScroll) {
           setHeight(4.5);
-          setFontSize(1.7)
+          setFontSize(1.5)
           setDisplay('none')
         } 
         if (currentScrollPos <= 40 ) {
           setHeight(7.5)
-          setFontSize(2)
+          setFontSize(1.9)
         }
       }
     }
   });
-
   
-
   return (
     <div className="App">
+      <div id="element1" style = {{display: `${'none'}`}}><img id="element2" src={element1} /></div>
       <header className="App-header" style = {{height: `${height}rem`}}>
         <div id="spacer1" style = {{height: `${height}rem`}}></div>
         <div className="title-container">
-          <div id="title" style = {{fontSize: `${fontSize}rem`}}>| Claire Rhoda</div>
-          <div id="subtitle" style = {{fontSize: `${fontSize/1.9}rem`}}>Software Developer</div>
+          <div id="title" style = {{transform: `scale(${transform})`}}>| Claire Rhoda</div>
+          <div id="subtitle" style = {{transform: `scale(${transform/1.8})`}}>Software Developer</div>
         </div>
         <button id="drop-down-btn" onClick={openNavButtons}>
           <div id="btn-line"></div>

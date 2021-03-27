@@ -72,14 +72,15 @@ button:focus {
 }
 
 #title {
-  padding-left: 2rem;
+  padding-left: 4rem;
+  padding-top: 0.5rem;
   font-family: Mukta;
-  height: 2.4rem;
+  height: 2rem;
   font-weight: bold;
   color: rgb(66, 57, 14);
   position: relative;
   animation: slideInLeft ease 1s;
-  transition: font-size ease-in 0.3s;
+  transition: all ease-in 0.3s;
 }
 
 @keyframes slideInLeft {
@@ -104,12 +105,12 @@ button:focus {
 
 #subtitle {
   display: flex;
-  padding-left: 3.1rem;
+  padding-left: 3.5rem;
   font-family: Rubik;
   position: relative;
   color: rgba(196, 183, 119);
   animation: fadeIn  2s;
-  transition: font-size ease-in 0.3s;
+  transition: all ease-in 0.3s;
 }
 
 .button-nav {
@@ -153,6 +154,8 @@ button:focus {
   position:relative;
   z-index: 1;
 }
+
+
 
 #contact-me-nav:after {
   content: "";
@@ -222,13 +225,13 @@ button:focus {
 }
 
 #line-decoration {
-  width: 16rem;
+  width: 18rem;
   height: 2.5rem;
   background-color: rgba(218, 219, 163, 0.411);
   font-size: 1.75rem;
   position: absolute;
   margin-top: 5.1rem;
-  margin-left: 7.2rem;
+  margin-left: -1rem;
   z-index: -1;
   display: flex;
   flex-direction: row;
@@ -241,6 +244,9 @@ button:focus {
   z-index: 1;
   order: 1;
   align-self: center;
+}
+#element2{
+  width:100%;
 }
 
 #opening {
@@ -606,7 +612,6 @@ a:link, a:visited, a:hover, a:active {
   #opening{text-align: start;}
   #opening1{text-align: center;}
   #about-me-description{text-align: center;}
-  #line-decoration{margin-left: -0.3rem}
   #img-pic-container {width:25rem}
   .logo-descrip-container{width:70%}
   #company-description{font-size: 1rem;}
@@ -618,11 +623,11 @@ a:link, a:visited, a:hover, a:active {
   #decoration1 {display: none}
   #work-logo{background-color: rgba(219, 211, 163, 0.541); padding: 1rem;}
   .btn-nav{border-radius: 5%;border-bottom: 1px rgb(137, 148, 98) solid;}
-
 }
 
 @media (min-width:1000px) {
   .info-box{width:55rem;}
+  #line-decoration{margin-left:-0.5rem;}
 }
 
 @media (min-width: 851px){
