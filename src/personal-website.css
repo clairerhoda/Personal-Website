@@ -70,17 +70,32 @@ button:focus {
   transition: height ease 0.3s;
   width: 100%;
 }
+.title-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 3rem;
+  transition: all ease-in 0.3s;
+  justify-content: space-between;
+}
 
 #title {
-  padding-left: 4rem;
-  padding-top: 0.5rem;
+  display: flex;
   font-family: Mukta;
-  height: 2rem;
+  font-size: 2rem;
   font-weight: bold;
   color: rgb(66, 57, 14);
-  position: relative;
   animation: slideInLeft ease 1s;
-  transition: all ease-in 0.3s;
+  height: 3rem;
+}
+
+#subtitle {
+  display: flex;
+  font-family: Rubik;
+  font-size: 1rem;
+  color: rgba(196, 183, 119);
+  animation: fadeIn  2s;
+  padding-left: 0.2rem;
 }
 
 @keyframes slideInLeft {
@@ -88,14 +103,9 @@ button:focus {
   100%{right: 0px;opacity:1}
 }
 
-@keyframes slideInRight {
-  0% {right: -90px; opacity:0;}
-  100%{right: 0px;opacity:1}
-}
-
-@keyframes slideOutRight {
-  0% {right: 0px; opacity:1;}
-  100%{right: -90px;opacity:0}
+@keyframes slideOutLeft {
+  0% {left: 0px; opacity:1;}
+  100%{left: -90px;opacity:0}
 }
  
 @keyframes fadeIn {
@@ -103,15 +113,7 @@ button:focus {
   100% {opacity:1;}
 }
 
-#subtitle {
-  display: flex;
-  padding-left: 3.5rem;
-  font-family: Rubik;
-  position: relative;
-  color: rgba(196, 183, 119);
-  animation: fadeIn  2s;
-  transition: all ease-in 0.3s;
-}
+
 
 .button-nav {
   display: flex;
@@ -224,19 +226,6 @@ button:focus {
   margin-left: 1.5rem;
 }
 
-#line-decoration {
-  width: 18rem;
-  height: 2.5rem;
-  background-color: rgba(218, 219, 163, 0.411);
-  font-size: 1.75rem;
-  position: absolute;
-  margin-top: 5.1rem;
-  margin-left: -1rem;
-  z-index: -1;
-  display: flex;
-  flex-direction: row;
-}
-
 .script{
   display: flex;
   flex-direction: column;
@@ -261,11 +250,13 @@ button:focus {
 #opening1 {
   width: 100%;
   font-size: 35px;
+  background-color: rgba(214, 208, 171, 0.527);
   font-family: Rambla;
   font-weight: bold;
   color: rgb(81, 83, 76) ;
   text-align: end;
   margin-bottom: 1rem;
+  padding-right: 1rem;
 }
 
 #opening2 {
@@ -555,49 +546,44 @@ a:link, a:visited, a:hover, a:active {
   display: flex;
   flex-direction: column;
   align-items: center;
-  align-self: flex-end;
-  justify-content: space-evenly;
+  align-self: flex-start;
   position: absolute;
   width: 6rem;
-  height: 4rem;
   top: 0;
-  padding: 1.1rem 0 1.1rem 0.3rem;
+  height: 24px;
+  justify-content: space-between;
+  margin-top: 1.5rem;
   animation: fadeIn ease-in 0.4s;
+  transition: all ease-in 0.3s;
 }
 
 #btn-line {
-  border-right: 0.5rem solid rgb(168, 194, 138);
-  width: 2rem;
-  height: 0.06rem;
-  padding: 0.1rem;
+  width: 33px;
+  border-right: 10px solid rgb(170, 189, 135);
+  height: 3.8px;
   background-color: rgb(71, 45, 23);
 }
 
 #drop-down {
-  background-color: rgb(220, 240, 197);
+  background-color: rgba(231, 240, 197, 0.582);
   flex-direction: column;
-  align-self: flex-end;
-  width: 12rem;
-  padding: 0.5rem 0 0.5rem 0;
+  width: 30%;
   position: absolute;
-  margin-top: 4.5rem;
-  z-index: 100;
-  animation: slideInRight ease-in 0.4s;
-  border-radius: 10% 0% 0% 10%;
+  z-index: 3;
+  transition: margin ease 0.5s;
 }
 
-#btn-drop-line {
-  width: 100%;
-  height: 2px;
-  background-color: rgb(199, 219, 163);
+@keyframes slideInLeft1 {
+  0% {left: -50px;opacity:0;}
+  100%{left: 0px;opacity:1}
 }
 
 @media (max-width:850px) {
-  .btn-nav{font-size: 0.9rem; width: 100%; justify-content: flex-start;}
+  .btn-nav{height:2rem;border-bottom: 1px rgb(191, 201, 156) solid; font-size: 0.9rem; width: 90%; justify-content: flex-start;}
   #icon-titles {padding-bottom: 2rem}
   .button-nav {display:none;}
   #contact-me-nav:after{display: none;}
-  #lines{display:none}
+  .title-container{align-self: center; align-items: center; margin: 0;}
 }
 
 @media (max-width:851px) {
@@ -610,7 +596,7 @@ a:link, a:visited, a:hover, a:active {
   #decoration{transform: rotate(180deg); margin-left: 4rem; margin-top: 1.5rem;}
   .script{order:0; align-items: center;align-self: center;margin-bottom: 2rem;}
   #opening{text-align: start;}
-  #opening1{text-align: center;}
+  #opening1{text-align: center; padding-right: 0; width: 20rem;}
   #about-me-description{text-align: center;}
   #img-pic-container {width:25rem}
   .logo-descrip-container{width:70%}
@@ -621,13 +607,11 @@ a:link, a:visited, a:hover, a:active {
   .skills-title-container{width:100%; }
   .skills-title{width:100%; font-size: 1.3rem; height: 3rem}
   #decoration1 {display: none}
-  #work-logo{background-color: rgba(219, 211, 163, 0.541); padding: 1rem;}
-  .btn-nav{border-radius: 5%;border-bottom: 1px rgb(137, 148, 98) solid;}
+  #work-logo{background-color: rgba(219, 211, 163, 0.541); padding: 2rem 4rem 2rem 4em;}
 }
 
 @media (min-width:1000px) {
   .info-box{width:55rem;}
-  #line-decoration{margin-left:-0.5rem;}
 }
 
 @media (min-width: 851px){
@@ -646,4 +630,5 @@ a:link, a:visited, a:hover, a:active {
   #white-slash{display: none}
   #decoration{height:20rem; width: 14rem;margin-left: 3rem; margin-top: 1.5rem;}
   #opening2{width: 70%;}
+  #subtitle{padding-top:3rem;}
 }

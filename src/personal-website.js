@@ -61,15 +61,17 @@ function App() {
     var x = document.getElementById("drop-down");
     if (x.style.display === "none") {
       x.style.display = "block";
-      x.style.animation = "slideInRight ease-in 0.4s";
+      x.style.animation = "slideInLeft1 ease 0.4s";
     } else {
-      x.style.animation= "slideOutRight ease-in 0.4s";
-      setTimeout(() => {  x.style.display = "none"; }, 400);
+      x.style.animation= "slideOutLeft ease 0.4s";
+      setTimeout(() => {x.style.display = "none";}, 400);
     }
   }
 
   const [height, setHeight] = useState(7.5);
-  const [transform, setFontSize] = useState(1.9);
+  const [margin1, setMargin] = useState(7.4);
+
+  const [transform, setSize] = useState(1);
   const [display, setDisplay] = useState('content');
   useEffect( () => { 
       if (typeof window !== "undefined") {
@@ -78,12 +80,15 @@ function App() {
         let maxScroll = document.body.scrollHeight - window.innerHeight;
         if (currentScrollPos > 40 && currentScrollPos < maxScroll) {
           setHeight(4.5);
-          setFontSize(1.5)
+          setMargin(4.5)
+          setSize(0.75)
           setDisplay('none')
         } 
         if (currentScrollPos <= 40 ) {
           setHeight(7.5)
-          setFontSize(1.9)
+          setMargin(7.4)
+
+          setSize(1)
         }
       }
     }
@@ -94,18 +99,18 @@ function App() {
       <div id="profile1" style = {{display: `${'none'}`}}><img id="profile2" src={profile1} alt="profile1"/></div>
       <header className="App-header" style = {{height: `${height}rem`}}>
         <div id="spacer1" style = {{height: `${height}rem`}}></div>
-        <div className="title-container">
-          <div id="title" style = {{transform: `scale(${transform})`}}>| Claire Rhoda</div>
-          <div id="subtitle" style = {{transform: `scale(${transform/1.8})`}}>Software Developer</div>
+        <div className="title-container" style = {{transform: `scale(${transform})`}}>
+          <div id="title" >Claire Rhoda</div>
+          <div id="subtitle">Software Developer</div>
         </div>
-        <button id="drop-down-btn" onClick={openNavButtons}>
+        <button id="drop-down-btn" style = {{transform: `scale(${transform/1})`}} onClick={openNavButtons}>
           <div id="btn-line"></div>
           <div id="btn-line"></div>
           <div id="btn-line"></div>
         </button>
-        <div id="drop-down" style = {{display: `${'none'}`}}> 
+        <div id="drop-down" style = {{display: `${'none'}`, marginTop: `${margin1}rem`}}> 
           <button onClick={executeScroll1} id="about-me-nav" className="btn-nav" type="button">About Me</button>
-          <button onClick={executeScroll2} style={{marginTop: `3px`,marginBottom: `0px`}}id="skills-nav" className="btn-nav" type="button">Skills</button>
+          <button onClick={executeScroll2} id="skills-nav" className="btn-nav" type="button">Skills</button>
           <button onClick={executeScroll3} style={{borderBottom: `none`}}id="contact-me-nav" className="btn-nav" type="button">Contact Me</button>
         </div>
         <div className="button-nav" >
@@ -126,7 +131,6 @@ function App() {
             </div>
             <div className="script">
               <div id="opening" >Hello,</div>
-              <div id="line-decoration"></div>
               <div id="opening1">I'm Claire Rhoda.</div>
               <div id="opening2">I am a Software Developer and current intern</div>
               <div id="opening2">at Apartment 304.</div>
@@ -158,7 +162,7 @@ function App() {
           </div>
           </div>
           <div className="center">
-            <div ref={skills} style={{marginBottom: '8em'}}></div>
+            <div ref={skills} style={{marginBottom: '9em'}}></div>
             <div id="skills">
             <div className="skills-box">
                 <div className="skills-title-container">
