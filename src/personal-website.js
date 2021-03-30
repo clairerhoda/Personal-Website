@@ -10,6 +10,8 @@ import github from './github.png'
 import arcText from './troygram.png'
 import arcText1 from './troygram1.png'
 import profile1 from './profile1.png'
+import linkedin from'./linkedin.png'
+
 import React, { useEffect, useState} from 'react';
 import './personal-website.css';
 import {elementGet, addEvent} from './personal-website-animate.js';
@@ -126,7 +128,7 @@ function App() {
           <div className="info-box">
             <div className="profile-container">
               <div id="decoration"></div>
-              <div id="white-slash">///////////////////////////////</div>
+              <div id="white-slash">//////////////</div>
               <img src={profile} className="profile-photo" alt="profile"/>
             </div>
             <div className="script">
@@ -202,17 +204,35 @@ function App() {
                 </a>
               </div>
           </div>
+          {/* <div className="center">
+            <div className="resume">
+                <i class="far fa-sticky-note"></i>
+                &nbsp; Resume
+            </div>
+
+          </div> */}
           <div className="center">
             <div ref={contact} id="contact">
               <div className="contact-me-box">
                 <div className="contact-me-title">Contact Me</div>
-                  <a href="mailto:clairehrhoda@gmail.com">
-                    <button id="email-button" type="button"> 
-                      <i class="fa fa-envelope" id="email-icon"></i>
-                      Email
-                    </button>
-                  </a>
+                <div id="row">
+                  <div className="email-contents">
+                    <a href="mailto:clairehrhoda@gmail.com">
+                      <button id="email-button" type="button"> 
+                        <i class="fa fa-envelope" id="email-icon"></i>
+                        Email
+                      </button>
+                    </a>
                   <div id="email-caption">clairehrhoda@gmail.com</div>
+                </div>
+                <div style={{width: `10%`}}></div>
+                <div className="linkedin-contents">
+                <a style={{display:`flex`, flexDirection:`column`, alignItems: `center`}}href="https://www.linkedin.com/in/claire-rhoda-96aa1211a/">
+                  <img id="linkedin" src={linkedin} alt="linkedin"/>
+                  <div id="email-caption">Linkedin Account</div>
+                </a>
+                </div>
+                </div>
               </div>
             </div>
           </div>
