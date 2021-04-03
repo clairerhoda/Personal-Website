@@ -7,10 +7,14 @@ import cplusplus from './c-plus-plus.png'
 import dart from './dart.png'
 import flutter from './flutter.png'
 import github from './github.png'
+import arcText2 from './troygram2.png'
 import arcText from './troygram.png'
 import arcText1 from './troygram1.png'
 import profile1 from './profile1.png'
+import background from './background.jpg'
+
 import linkedin from'./linkedin.png'
+import { ParallaxProvider, Parallax, ParallaxBanner} from 'react-scroll-parallax';
 
 import React, { useEffect, useState} from 'react';
 import './personal-website.css';
@@ -56,7 +60,6 @@ function App() {
       x.style.display = "block";
       x.style.animation = "fadeIn ease 15s";
     }
-
   });
 
   const openNavButtons = () => {
@@ -69,47 +72,38 @@ function App() {
       setTimeout(() => {x.style.display = "none";}, 400);
     }
   }
-
-  const [height, setHeight] = useState(7.5);
-  const [margin1, setMargin] = useState(7.4);
-
-  const [transform, setSize] = useState(1);
-  const [display, setDisplay] = useState('content');
+  const [display, setDisplay] = useState('none');
+  const [margin1, setMargin] = useState(10.95);
   useEffect( () => { 
       if (typeof window !== "undefined") {
       window.onscroll = () => {
         let currentScrollPos = window.pageYOffset;
         let maxScroll = document.body.scrollHeight - window.innerHeight;
-        if (currentScrollPos > 40 && currentScrollPos < maxScroll) {
-          setHeight(4.5);
-          setMargin(4.5)
-          setSize(0.75)
-          setDisplay('none')
+        if (currentScrollPos > 120 && currentScrollPos < maxScroll) {
+          setDisplay('flex')
+          setMargin(3.1)
         } 
-        if (currentScrollPos <= 40 ) {
-          setHeight(7.5)
-          setMargin(7.4)
+        if (currentScrollPos <= 120 ) {
+          setDisplay('none')
+          setMargin(10.95)
 
-          setSize(1)
         }
       }
     }
   });
   
   return (
-    <div className="App">
-      <div id="profile1" style = {{display: `${'none'}`}}><img id="profile2" src={profile1} alt="profile1"/></div>
-      <header className="App-header" style = {{height: `${height}rem`}}>
-        <div id="spacer1" style = {{height: `${height}rem`}}></div>
-        <div className="title-container" style = {{transform: `scale(${transform})`}}>
-          <div id="title" >Claire Rhoda</div>
-          <div id="subtitle">Software Developer</div>
-        </div>
-        <button id="drop-down-btn" style = {{transform: `scale(${transform/1})`}} onClick={openNavButtons}>
+    <ParallaxProvider>
+      <div className="App">
+      <header className="App-header">
+        <button id="drop-down-btn" onClick={openNavButtons}>
           <div id="btn-line"></div>
           <div id="btn-line"></div>
           <div id="btn-line"></div>
         </button>
+        <div id="name-container">
+          <div style={{display: `${display}`}} id="name">Claire Rhoda</div>
+          </div>
         <div id="drop-down" style = {{display: `${'none'}`, marginTop: `${margin1}rem`}}> 
           <button onClick={executeScroll1} id="about-me-nav" className="btn-nav" type="button">About Me</button>
           <button onClick={executeScroll2} id="skills-nav" className="btn-nav" type="button">Skills</button>
@@ -120,128 +114,309 @@ function App() {
           <button onClick={executeScroll2} id="skills-nav" className="btn-nav" type="button">Skills</button>
           <button onClick={executeScroll3} id="contact-me-nav" className="btn-nav" type="button">Contact Me</button>
         </div>
-        <div id="spacer1" style = {{height: `${height*3}rem`}}></div>
       </header> 
-      <div className="center">
-      <div onClick={scrollDownArrow} style ={{display: `${display}`}} className="arrow">^</div>
-      <div ref={info} style={{marginBottom: '10rem'}}></div>
-          <div className="info-box">
-            <div className="profile-container">
-              <div id="decoration"></div>
-              <div id="white-slash">//////////////</div>
-              <img src={profile} className="profile-photo" alt="profile"/>
-            </div>
-            <div className="script">
-              <div id="opening" >Hello,</div>
-              <div id="opening1">I'm Claire Rhoda.</div>
-              <div id="opening2">I am a Software Developer and current intern</div>
-              <div id="opening2">at Apartment 304.</div>
+        <div id="profile1" style = {{display: `${'none'}`}}><img id="profile2" src={profile1} alt="profile1"/></div>
+      <ParallaxBanner
+          className="background"
+          layers={[
+              {
+                amount: 0.5,
+              },
+          ]}
+          style={{
+              height: '175px',
+          }}
+      >
+          <div id="intro-box">
+            <div id="opening">Claire Rhoda</div>
+            <div id="opening1">Software Developer</div>
+          </div>
+      </ParallaxBanner>
+      <div ref={info}></div>
+      <ParallaxBanner
+          className="background1"
+          layers={[
+              {
+                image: background,
+                amount: 0.5,
+                
+              },
+          ]}
+          style={{
+              height: '600px',
+          }}
+      >
+        <div id="about-me-box">
+          <div className="profile-container">
+            <img src={profile} id="profile-photo" alt="profile"/>
+          </div>
+          <div className="about-me-container">
+              <div id="description1" >Hello, I'm Claire.</div>
+              <div id="description2">I am a Software Developer and current intern at Apartment 304.</div>
               <br></br>
               <div id="about-me-description"><i class='fas fa-map-marker-alt'></i> &nbsp; Orange County, California</div>
               <div id="about-me-description">Front-end</div>
-              <div id="about-me-description">App Devloper</div>
-              <div id="about-me-description">Website Devloper</div>
+              <div id="about-me-description">App Developer</div>
+              <div id="about-me-description">Website Developer</div>
               <div id="about-me-description">Cal State Fullerton Student</div>
+          </div>
+        </div>
+      </ParallaxBanner>
+      <ParallaxBanner
+          className="background2"
+          layers={[
+              {
+                image: background,
+                amount: 0.5,
+                
+              },
+          ]}
+          style={{
+              height: 'auto',
+              padding: '4rem 0 4rem 0',
+          }}
+      >
+        <div id="about-me-box">
+          <div className="profile-container">
+            <img src={profile} id="profile-photo" alt="profile"/>
+          </div>
+          <div className="about-me-container">
+              <div id="description1" >Hello, I'm Claire.</div>
+              <div id="description2">I am a Software Developer and current intern at Apartment 304.</div>
+              <br></br>
+              <div id="about-me-description"><i class='fas fa-map-marker-alt'></i> &nbsp; Orange County, California</div>
+              <div id="about-me-description">Front-end</div>
+              <div id="about-me-description">App Developer</div>
+              <div id="about-me-description">Website Developer</div>
+              <div id="about-me-description">Cal State Fullerton Student</div>
+          </div>
+        </div>
+      </ParallaxBanner>
+      <ParallaxBanner
+          className="background3"
+          layers={[
+              {
+                amount: 0.5,
+              },
+          ]}
+          style={{
+              height: 'auto',
+              padding: '2rem 0 3rem 0',
+          }}
+      >
+        <div id="company-info-box">
+          <div className="logo-descrip-container">
+            <div id="company-description">
+              Since 2019, Apartment 304 has given me the oppurtunity to work under the guidance of experienced software engineers. 
             </div>
-            <div ref={company}></div>
-          </div>
-          <div id="company-info">
-            <div id="decoration2"></div>
-            <div id="decoration1"></div>
-              <div className="logo-descrip-container">
-                <div id="company-description">
-                  Since 2019, Apartment 304 has given me the oppurtunity to work under the guidance of experienced software engineers. 
-                </div>
-                <div id="logo-container">
-                  <a href="https://www.apartment304.com/">
-                    <img id="work-logo" src="https://uploads-ssl.webflow.com/5e0524b00aa52925697c1521/5e0524b00aa529d3c47c1587_apt204_logo_footer.png" alt="work logo" />
-                  </a>
-                </div>
-              </div>
-              <div id="img-pic-container">
-                <img src={company_pic} className="work-photo" alt="team"/>
-              </div>
-          </div>
-          </div>
-          <div className="center">
-            <div ref={skills} style={{marginBottom: '9em'}}></div>
-            <div id="skills">
-            <div className="skills-box">
-                <div className="skills-title-container">
-                  <div id="white-slash1">//////////////////////</div>
-                  <div className="skills-title">Languages</div>
-                </div>
-                <div className="img-row">
-                  <div><img id="code-img" src={html5} alt="html5"/>
-                  <div id="icon-titles">HTML</div>
-                  </div>
-                  <div><img id="code-img" src={css} alt="css"/>
-                  <div id="icon-titles">CSS</div>
-                  </div>
-                  <div><img id="code-img" src={javascript} alt="javascript"/>
-                    <div id="icon-titles">JavaScript</div>
-                  </div>
-                  <div><img id="code-img" src={cplusplus} alt="c plus plus"/>
-                    <div id="icon-titles">C++</div>
-                  </div>
-                  <div><img id="code-img" src={flutter} alt="flutter"/>
-                    <div id="icon-titles">Flutter</div>
-                  </div>
-                  <div><img id="code-img" src={dart} alt="dart "/>
-                    <div id="icon-titles">Dart</div>
-                  </div>                  
-                </div>
-              </div>
+            <div classNAme="logo-container">
+              <a href="https://www.apartment304.com/">
+              <img id="arc-text2" src={arcText2} alt="click to learn more"/>
+                <img id="work-logo" src="https://uploads-ssl.webflow.com/5e0524b00aa52925697c1521/5e0524b00aa529d3c47c1587_apt204_logo_footer.png" alt="work logo" />
+              </a>
             </div>
           </div>
-          <div className="center">
-              <div className="github-box">
-                <div id="decoration4">||||||||||||||||||||||||||||||||||||||||||||</div>
-                <a href="https://github.com/clairerhoda">
-                <img id="arc-text" src={arcText} alt="arc text"/>
-                <img id="arc-text1" src={arcText1} alt="arc text"/>
-                  <img id="github" src={github}  alt="github" />
-                </a>
-              </div>
+          <div className="img-pic-container">
+            <img src={company_pic} className="work-photo" alt="team"/>
           </div>
-          {/* <div className="center">
-            <div className="resume">
-                <i class="far fa-sticky-note"></i>
-                &nbsp; Resume
+        </div>   
+      </ParallaxBanner> 
+        <ParallaxBanner
+          className="divider"
+          layers={[
+              {
+                amount: 0.5,
+              },
+          ]}
+          style={{
+              height: '6px',
+          }}
+      >
+      </ParallaxBanner>
+      <div ref={skills}></div>
+      <ParallaxBanner
+          className="background4"
+          layers={[
+              {
+                amount: 0.5,
+              },
+          ]}
+          style={{
+              height: 'auto',
+              padding: '2rem 0 2rem 0',
+          }}
+      >
+      <div className="skills-box">
+          <div className="skills-title-container">
+            <div id="skills-title">Languages</div>
+          </div>
+          <div className="img-row">
+            <Parallax x={['-40%', '0%']}>
+            <div><img id="code-img" src={html5} alt="html5"/>
+            <div id="icon-titles">HTML</div>
             </div>
-
-          </div> */}
-          <div className="center">
-            <div ref={contact} id="contact">
-              <div className="contact-me-box">
-                <div className="contact-me-title">Contact Me</div>
-                <div id="row">
+            </Parallax>
+            <Parallax  x={['-20%', '0%']}>
+            <div><img id="code-img" src={css} alt="css"/>
+            <div id="icon-titles">CSS</div>
+            </div>
+            </Parallax>
+            <Parallax x={['-5%', '0%']}>
+            <div><img id="code-img" src={javascript} alt="javascript"/>
+              <div id="icon-titles">JavaScript</div>
+            </div>
+            </Parallax>
+            <Parallax x={['5%', '0%']}>
+            <div><img id="code-img" src={cplusplus} alt="c plus plus"/>
+              <div id="icon-titles">C++</div>
+            </div>
+            </Parallax>
+            <Parallax x={['20%', '0%']}>
+            <div><img id="code-img" src={flutter} alt="flutter"/>
+              <div id="icon-titles">Flutter</div>
+            </div>
+            </Parallax>
+            <Parallax x={['40%', '0%']}>
+            <div><img id="code-img" src={dart} alt="dart "/>
+              <div id="icon-titles">Dart</div>
+            </div>  
+            </Parallax>                
+          </div>
+          
+          <div id="divider"></div>
+          <div className="github-box">
+            <a href="https://github.com/clairerhoda">
+              <img id="arc-text" src={arcText} alt="arc text"/>
+              <img id="arc-text1" src={arcText1} alt="arc text"/>
+              <img id="github" src={github}  alt="github" />
+            </a>
+          </div>
+      </div>
+      </ParallaxBanner> 
+      <ParallaxBanner
+          className="background4a"
+          layers={[
+              {
+                amount: 0.5,
+              },
+          ]}
+          style={{
+              height: 'auto',
+              padding: '1rem 0 1rem 0',
+          }}
+      >
+      <div className="skills-box">
+          <div className="skills-title-container">
+            <div id="skills-title">Languages</div>
+          </div>
+          <div className="img-row">
+            <div><img id="code-img" src={html5} alt="html5"/>
+            <div id="icon-titles">HTML</div>
+            </div>
+            <div><img id="code-img" src={css} alt="css"/>
+            <div id="icon-titles">CSS</div>
+            </div>
+            <div><img id="code-img" src={javascript} alt="javascript"/>
+              <div id="icon-titles">JavaScript</div>
+            </div>
+            <div><img id="code-img" src={cplusplus} alt="c plus plus"/>
+              <div id="icon-titles">C++</div>
+            </div>
+            <div><img id="code-img" src={flutter} alt="flutter"/>
+              <div id="icon-titles">Flutter</div>
+            </div>
+            <div><img id="code-img" src={dart} alt="dart "/>
+              <div id="icon-titles">Dart</div>
+            </div>  
+          </div>
+          <div id="divider"></div>
+          <div className="github-box">
+            <a href="https://github.com/clairerhoda">
+              <img id="arc-text" src={arcText} alt="arc text"/>
+              <img id="arc-text1" src={arcText1} alt="arc text"/>
+              <img id="github" src={github}  alt="github" />
+            </a>
+          </div>
+      </div>
+      </ParallaxBanner> 
+      <ParallaxBanner
+          className="divider1"
+          layers={[
+              {
+                amount: 0.5,
+              },
+          ]}
+          style={{
+              height: '6px',
+          }}
+      >
+      </ParallaxBanner>
+      <div ref={contact}></div>
+      <ParallaxBanner
+          className="background5"
+          layers={[
+              {
+                amount: 0.5,
+              },
+          ]}
+          style={{
+              height: 'auto',
+              padding: '1rem 0 1rem 0'
+          }}
+      >
+              <div id="contact-me-box">
+                <div className="contact-title-container">
+                  <div id="contact-me-title">Contact Me</div>
+                </div>
+                <div id="contact-row">
                   <div className="email-contents">
                     <a href="mailto:clairehrhoda@gmail.com">
                       <button id="email-button" type="button"> 
                         <i class="fa fa-envelope" id="email-icon"></i>
-                        Email
+                        &nbsp;&nbsp;Email
                       </button>
                     </a>
-                  <div id="email-caption">clairehrhoda@gmail.com</div>
+                    <div id="email-caption">clairehrhoda@gmail.com</div>
+                  </div>
+                  <div className="linkedin-contents">
+                    <a style={{display:`flex`, flexDirection:`column`, alignItems: `center`, height: `5rem`, justifyContent: `space-between`}}href="https://www.linkedin.com/in/claire-rhoda-96aa1211a/">
+                      <img id="linkedin" src={linkedin} alt="linkedin"/>
+                      <div id="linkedin-caption">Linkedin Account</div>
+                    </a>
+                  </div>
                 </div>
-                <div style={{width: `10%`}}></div>
-                <div className="linkedin-contents">
-                <a style={{display:`flex`, flexDirection:`column`, alignItems: `center`}}href="https://www.linkedin.com/in/claire-rhoda-96aa1211a/">
-                  <img id="linkedin" src={linkedin} alt="linkedin"/>
-                  <div id="email-caption">Linkedin Account</div>
-                </a>
-                </div>
-                </div>
-              </div>
             </div>
-          </div>
-          <div className="center">
-              <div className="rights-box">
+      </ParallaxBanner> 
+      <ParallaxBanner
+          className="divider"
+          layers={[
+              {
+                amount: 0.5,
+              },
+          ]}
+          style={{
+              height: '6px',
+          }}
+      >
+      </ParallaxBanner>
+      <ParallaxBanner
+          className="background6"
+          layers={[
+              {
+                amount: 0.5,
+              },
+          ]}
+          style={{
+              height: '50px',
+          }}
+      >
+        <div className="rights-box">
               © Claire Rhoda. All rights reserved.
               </div>
-          </div>
-    </div>
+      </ParallaxBanner> 
+      </div>
+    </ParallaxProvider>
+
   );
 }
 
