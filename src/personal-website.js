@@ -209,7 +209,7 @@ function App() {
             <div id="company-description">
               Since 2019, Apartment 304 has given me the oppurtunity to work under the guidance of experienced software engineers. 
             </div>
-            <div classNAme="logo-container">
+            <div className="logo-container">
               <a href="https://www.apartment304.com/">
               <img id="arc-text2" src={arcText2} alt="click to learn more"/>
                 <img id="work-logo" src="https://uploads-ssl.webflow.com/5e0524b00aa52925697c1521/5e0524b00aa529d3c47c1587_apt204_logo_footer.png" alt="work logo" />
