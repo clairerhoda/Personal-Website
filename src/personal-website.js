@@ -115,7 +115,6 @@ function App() {
           <button onClick={executeScroll3} id="contact-me-nav" className="btn-nav" type="button">Contact Me</button>
         </div>
       </header> 
-        <div id="profile1" style = {{display: `${'none'}`}}><img id="profile2" src={profile1} alt="profile1"/></div>
       <ParallaxBanner
           className="background"
           layers={[
