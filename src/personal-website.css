@@ -1,23 +1,25 @@
 .App{
   text-decoration: none;
 }
+
 a:link,a:visited,a:hover, a:active {
   color: none;
   text-decoration: none;
 }
+
 button:focus {
   outline: none;
   box-shadow: none;
 }
 
 .App-header{
-  background-color: rgb(173, 83, 55);
-  height: 50px;
-  position: fixed;
-  z-index: 300;
-  width: 100%;
   display: flex;
   flex-direction: row;
+  height: 50px;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  background-color: rgb(255, 255, 255);
 }
 
 #name-container{
@@ -27,18 +29,13 @@ button:focus {
 
 #name{
   display: flex;
-  color: white;
+  color: rgb(0, 0, 0);
   height: 100%;
   align-items: center;
   padding-left: 8%;
-  padding-top: 0.25rem;
-  text-shadow: 5px 4px rgb(155, 67, 40);
-  color: white;
-  font-family: 'Josefin Sans', sans-serif;
-  letter-spacing: 0px;
-  font-weight: 700;
-  font-size: 1.5rem;
-  text-align: center;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 6=500;
+  font-size: 20px;
   animation: fadeIn ease 1s;
 }
 
@@ -46,43 +43,31 @@ button:focus {
   0% {opacity:0;}
   100% {opacity:1;}
 }
+
 .button-nav{
   display: flex;
   justify-content: flex-end;
   height: 100%;
-  padding-right: 5%;
-  width: 45%;
+  padding-right: 3%;
+  width: 50%;
 }
+
 .btn-nav{
-  color: rgb(255, 255, 255);
-  text-shadow: 2.5px 2.5px rgb(155, 67, 40);
-  background-color: rgba(255, 0, 0, 0);
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 0);
   border: none;
-  height: 100%;
-  width: 7rem;
-  font-size: 1rem;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 700;
+  width: 100px;
+  font-size: 14px;
+  font-family: 'Libre Franklin', sans-serif;
   cursor: pointer;
+  font-weight: 300;
 }
+
 .btn-nav:hover{
-  color: rgb(219, 211, 211);
+  color: rgb(68, 68, 68);
   transition: color ease-in-out 0.2s;
 }
-.divider{
-  background-color: rgb(137, 155, 149);
-}
-.divider1{
-  background-color: rgb(155, 154, 137);
-}
-.background{
-  display: flex;
-  position: relative;
-  z-index: 0;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(173, 83, 55);
-}
+
 .background1{
   display: flex;
   position: relative;
@@ -90,6 +75,7 @@ button:focus {
   align-items: center;
   justify-content: center;
 }
+
 .background2{
   display: flex;
   position: relative;
@@ -97,69 +83,80 @@ button:focus {
   align-items: center;
   justify-content: center;
 }
+
 .background3{
   display: flex;
   position: relative;
   z-index: 0;
   align-items: center;
   justify-content: center;
-  background-color: rgb(158, 170, 166);
+  background-color: rgb(231, 233, 236);
+  border-bottom: 2px solid rgb(255, 255, 255);
 }
+
 .background4{
   display: flex;
   position: relative;
   z-index: 0;
   align-items: center;
   justify-content: center;
-  background-color: rgb(197, 195, 169);
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(255, 255, 255);
 }
+
 .background4a{
   display: flex;
   position: relative;
   z-index: 0;
   align-items: center;
   justify-content: center;
-  background-color: rgb(197, 195, 169);
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid rgb(255, 255, 255);
 }
+
 .background5{
   display: flex;
   position: relative;
   z-index: 0;
   align-items: center;
   justify-content: center;
-  background-color: rgb(158, 170, 166);
+  background-color: rgb(231, 233, 236);
+  border-bottom: 2px solid rgb(255, 255, 255);
 }
+
 .background6{
   display: flex;
   position: relative;
   z-index: 0;
   align-items: center;
   justify-content: center;
-  background-color: rgb(197, 195, 169);
+  background-color: rgb(255, 255, 255);
 }
+
 #intro-box{
-  position: relative;
-  z-index: 1;
   display: flex;
   flex-direction: column;
-  width: 90%;
-  height: 300px;
+  position: relative;
+  z-index: 0;
+  width: 100%;
   align-items: center;
-  justify-content: center;
-  text-shadow: 9px 6px rgb(155, 67, 40);
-  color: white;
-  font-family: 'Josefin Sans', sans-serif;
-  letter-spacing: -4px;
-  font-weight: 700;
-  font-size: 5rem;
-  text-align: center;
-  margin-top: 1.75rem;
+  justify-content: flex-end;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 400;
+  height: 110px;
+  padding-bottom: 30px;
 }
+
 #opening{
-  font-size: 3.5rem;
+  font-size: 28px;
+  padding-left: 5%;
 }
+
 #opening1{
-  font-size: 2.2rem;
+  font-size: 16px;
+  padding-left: 5%;
 }
 
 #about-me-box{
@@ -172,7 +169,7 @@ button:focus {
   align-items: center;
   justify-content: center;
   padding: 3rem 0 3rem 0;
-  background-color: rgb(218, 209, 175);
+  background-color: rgb(255, 255, 255);
 }
 
 .profile-container{
@@ -186,12 +183,10 @@ button:focus {
 }
 
 #profile-photo{
-  width: 18rem;
+  width: 250px;
   align-items: center;
   justify-content: center;
-  border-radius: 100%;
-  border: 5px solid white;
-  box-shadow: rgb(187, 178, 148) 5px 4px;
+  border : 2px solid black;
 }
 
 .about-me-container{
@@ -202,33 +197,22 @@ button:focus {
   flex-direction: column;
   justify-content: center;
   align-items: flex-end;
-  color: white;
+  color: rgb(0, 0, 0);
   height: 100%;
 }
 
 #description1{
-  font-size: 2rem;
+  font-size: 21px;
   text-align: end;
-  text-shadow: 2px 2px rgb(187, 178, 148);
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 700;
-}
-
-#description2{
-  color: rgb(161, 154, 129);
-  font-size: 1.5rem;
-  text-align: end;
-  text-shadow: 1.3px 1.3px rgb(255, 255, 255);
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 700;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 300;
 }
 
 #about-me-description{
-  font-size: 1rem;
+  font-size: 16px;
   text-align: end;
-  text-shadow: 1.5px 1.5px rgb(187, 178, 148);
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 500;
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 100;
 }
 
 #company-info-box{
@@ -241,17 +225,18 @@ button:focus {
   align-items: center;
   justify-content: center;
 }
+
 #company-description{
   display: flex;
   text-align: center;
   width: 90%;
-  color: white;
-  font-size: 1.1rem;
-  text-shadow: 1.5px 1.5px rgb(128, 139, 136);
-  font-weight: 700;
-  font-family: 'Noto Sans JP', sans-serif;
+  color: rgb(0, 0, 0);
+  font-size: 16px;
+  font-weight: 300;
+  font-family: 'Libre Franklin', sans-serif;
   margin-top: 3rem;
 }
+
 .logo-descrip-container{
   display: flex;
   flex-direction: column;
@@ -262,22 +247,25 @@ button:focus {
   padding-right: 4%;
   padding-left: 1%;
 }
+
 .logo-container{
   display: flex;
   justify-content: center;
   width: 100%;
 }
+
 #work-logo{
   width: 10rem;
   margin-bottom: 3rem;
 }
+
 #arc-text2{
   height: 8.9rem;
   position: absolute;
   margin-top: -3rem;
   margin-left: 0.5rem;
-  filter: invert(100%);
 }
+
 .img-pic-container{
   display: flex;
   justify-content: center;
@@ -286,66 +274,64 @@ button:focus {
   padding-right: 2%;
   padding-left: 1%
 }
+
 .work-photo{
   width: 25rem;
   height: 100%;
-  border: 5px solid white;
-  border-radius: 2rem;
-  box-shadow: rgb(128, 139, 136) -4px 4px;
+  border : 2px solid black;
 }
+
 .skills-box{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .skills-title-container{
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
-  height: 8rem;
+  height: 80px;
+  padding-bottom: 40px;
 }
+
 #skills-title{
-  color: white;
-  text-shadow: 1.5px 1.5px rgb(163, 160, 134);
-  font-weight: 700;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 1.75rem;
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 18px;
   z-index: 1;
 }
+
 .img-row{
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
 }
+
 #code-img {
   display: flex;
   width: auto;
-  height: 8rem;
-  padding: 0 1rem 0 1rem;
+  height: 100px;
+  padding: 0 30px 0 30px;
 }
+
 #icon-titles{
   display: flex;
   justify-content: center;
-  color: white;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 700;
+  color: rgb(0, 0, 0);
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 400;
   padding-top: 0.5rem;
   padding-bottom: 1rem;
-  text-shadow: 1.5px 1.5px rgb(167, 165, 152);
-}
-#divider{
-  height: 2px;
-  width: 90%;
-  background-color: rgb(255, 255, 255);
-  border-bottom: rgb(163, 160, 134) 0.9px solid;
-  margin: 2rem 0 3rem 0;
+  font-size: 14px;
 }
 
 .github-box {
   display: flex;
-  margin: 0 0 3rem 0;
+  margin: 100px 0 3rem 0;
   flex-direction: column;
   height: auto;
   width: 100%;
@@ -374,52 +360,57 @@ button:focus {
   margin-left: 6rem;
   transform: rotate(-38.5deg);
 }
+
 #contact-me-box{
   height: 100%;
   width: 1100px;
-  padding: 1rem 0 1rem 0;
 }
+
 #contact-row{
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  height: 8rem;
+  height: 100px;
 }
+
 .contact-title-container{
   display: flex;
   width: 100%;
   justify-content: center;
   align-items: center;
-  height: 5rem;
+  height: 50px;
+  padding-bottom: 10px;
 }
+
 #contact-me-title{
-  color: white;
-  text-shadow: 1.5px 1.5px rgb(125, 136, 132);
-  font-weight: 700;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-size: 1.75rem;
+  color: rgb(0, 0, 0);
+  font-weight: 400;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 18px;
   z-index: 1;
 }
+
 .linkedin-contents {
   display: flex;
   flex-direction: column;
   align-items: center;
   align-self: center;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: 'Libre Franklin', sans-serif;
   z-index: 2;
   justify-content: space-between;
   height: 5rem;
 }
+
 #linkedin{
   width: 2.2rem;
-  border: rgb(184, 190, 188) 2px solid;
   border-radius: 100%;
 }
-#linkedin:hover{
-  filter: brightness(90%);
-  transition: filter ease 0.3s;
 
+#linkedin:hover{
+  filter: brightness(95%);
+  transition: filter ease 0.3s;
 }
+
 .email-contents{
   display: flex;
   flex-direction: column;
@@ -427,46 +418,48 @@ button:focus {
   align-self: center;
   z-index: 2;
   justify-content: space-between;
-  height: 5rem;
+  height: 80px;
 }
+
 #email-button{
-  border: white 2px solid;
-  border-radius: 0.6rem;
-  background-color: rgb(184, 190, 188);
+  border: rgb(0, 0, 0) 0px solid;
+  border-radius: 0.1rem;
+  background-color: rgb(255, 255, 255);
   height: 2.5rem;
   width: 7rem;
-  color: white;
+  color: rgb(201, 206, 211);
   font-size: 1rem;
-  font-weight: 700;
-  text-shadow: rgb(125, 136, 132) 1.5px 1.5px;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+  font-family: 'Libre Franklin', sans-serif;
   cursor: pointer;
 }
+
 #email-button:hover{
-  background-color: rgb(196, 202, 200);
+  background-color: rgb(241, 241, 241);
   transition: background-color ease 0.3s;
 }
+
 #email-caption{
-  font-size: 1rem;
-  color: white;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 700;
-  text-shadow: rgb(125, 136, 132) 1.5px 1.5px;
+  font-size: 14px;
+  color: rgb(82, 82, 82);
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 400;
 }
 
 #linkedin-caption{
-  font-size: 1rem;
-  color: white;
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 700;
-  text-shadow: rgb(125, 136, 132) 1.5px 1.5px;
+  font-size: 14px;
+  color: rgb(82, 82, 82);
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 400;
 }
+
 .rights-box{
-  color: rgb(255, 255, 255);
-  font-family: 'Noto Sans JP', sans-serif;
-  font-weight: 500;
-  font-size: 1rem;
+  color: rgb(0, 0, 0);
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 100;
+  font-size: 13px;
 }
+
 #drop-down-btn {
   background-color: rgba(255, 255, 255, 0);
   border: none;
@@ -477,14 +470,16 @@ button:focus {
   width: 3rem;
   padding-left: 2rem;
   top: 0;
-  height: 24px;
+  height: 20px;
   justify-content: space-between;
   margin-top: 15px;
 }
+
 @keyframes slideInLeft1 {
   0% {left: -50px;opacity:0;}
   100%{left: 0px;opacity:1}
 }
+
 @keyframes slideOutLeft {
   0% {left: 0px; opacity:1;}
   100%{left: -90px;opacity:0}
@@ -492,50 +487,52 @@ button:focus {
 
 #btn-line {
   width: 33px;
-  height: 3.8px;
-  background-color: rgb(255, 255, 255);
-  border-bottom: solid 2px rgb(155, 67, 40);
+  height: 1.8px;
+  background-color: rgb(0, 0, 0);
 }
 
 #drop-down {
-  background-color: rgba(197, 108, 81, 0.61);
+  background-color: rgba(255, 255, 255, 0.849);
   flex-direction: column;
   width: 30%;
   margin-top: 50px;
   position: absolute;
   z-index: 3;
   transition: margin ease 0.5s;
-  border-bottom: solid 2px rgb(155, 67, 40);
-  border-top: solid 2px rgb(155, 67, 40);
-  border-right: solid 2px rgb(155, 67, 40);
+
 }
+
 @media (max-width:1200px) {
   #about-me-box{width: 90%;}
   #company-info-box{width: 90%}
   #contact-me-box{width: 90%}
 }
+
 @media (max-width:850px) {
-  .about-me-container{width: 40%; padding-right: 5%;}
+  .about-me-container{width: 40%; padding-right: 7%;}
   .profile-container{width: 50%; padding-left: 5%;}
   .img-pic-container{padding-left:0}
   .work-photo{width: 21rem;}
-} 
+}
+
 @media(min-width: 1111px){
   .background4{display: flex}
   .background4a{display: none}
 }
+
 @media (max-width:1110px) {
   #intro-box{align-items: flex-start; text-align: start;}
-
   .background4{display: none}
   .background4a{display: flex}
 }
+
 @media(min-width: 701px){
   .background1{display: flex}
   .background2{display: none}
   #drop-down{display: none !important;}
   #drop-down-btn {display: none;}
 }
+
 @media (max-width:700px) {
   .background1{display: none}
   .background2{display: flex}
@@ -545,7 +542,6 @@ button:focus {
   #description2{text-align: center;}
   #description3{text-align: center;}
   #about-me-description{text-align: center;}
-
   .profile-container{order:1; padding: 0;justify-content: center;}
   #profile-photo{width:15rem; margin-top: 3rem}
   #company-info-box{flex-direction: column; height: 550px}
@@ -557,11 +553,10 @@ button:focus {
   .img-pic-container{width: 100%; height: 100%; padding: 0;}
   .work-photo{width: 22.5rem;}
   #contact-row{margin:0 1rem 0 1rem}
-
-  .btn-nav{height:2rem;border-bottom: 2px rgb(155, 67, 40) solid; font-size: 0.9rem; width: 90%; justify-content: flex-start;}
+  .btn-nav{height:2rem; text-shadow: none; border-bottom: 1px rgb(119, 119, 119) solid; font-size: 13px; width: 100%; justify-content: flex-start;}
   .button-nav {display:none;}
-
 } 
+
 @media (max-width:570px) {
   #contact-row{flex-direction: column; height: 15rem}
   .linkedin-contents {margin-top: 1rem;}

@@ -1,21 +1,19 @@
-import company_pic from './company_pic.jpg'
-import profile from './profile.jpg'
-import html5 from './html5.png'
-import css from './css.png'
-import javascript from './javascript.png'
-import cplusplus from './c-plus-plus.png'
-import dart from './dart.png'
-import flutter from './flutter.png'
-import github from './github.png'
-import arcText2 from './troygram2.png'
-import arcText from './troygram.png'
-import arcText1 from './troygram1.png'
-import profile1 from './profile1.png'
-import background from './background.jpg'
+import company_pic from './images/company_pic.jpg'
+import profile from './images/profile.jpg'
+import html5 from './images/html5.png'
+import css from './images/css.png'
+import javascript from './images/javascript.png'
+import cplusplus from './images/c-plus-plus.png'
+import dart from './images/dart.png'
+import flutter from './images/flutter.png'
+import github from './images/github.png'
+import arcText2 from './images/troygram2.png'
+import arcText from './images/troygram.png'
+import arcText1 from './images/troygram1.png'
+import background from './images/background.jpg'
+import linkedin from'./images/linkedin.png'
 
-import linkedin from'./linkedin.png'
 import { ParallaxProvider, Parallax, ParallaxBanner} from 'react-scroll-parallax';
-
 import React, { useEffect, useState} from 'react';
 import './personal-website.css';
 import {elementGet, addEvent} from './personal-website-animate.js';
@@ -40,11 +38,7 @@ function App() {
       behavior: "smooth",
     });
   }
-  const scrollDownArrow = () => {
-    company.current.scrollIntoView({
-      behavior: "smooth",
-    });
-  }
+
   var element = elementGet();
 
   addEvent(document, "keypress", function (e) {
@@ -73,7 +67,7 @@ function App() {
     }
   }
   const [display, setDisplay] = useState('none');
-  const [margin1, setMargin] = useState(10.95);
+  const [margin1, setMargin] = useState(8.7);
   useEffect( () => { 
       if (typeof window !== "undefined") {
       window.onscroll = () => {
@@ -85,8 +79,7 @@ function App() {
         } 
         if (currentScrollPos <= 120 ) {
           setDisplay('none')
-          setMargin(10.95)
-
+          setMargin(8.7)
         }
       }
     }
@@ -115,22 +108,10 @@ function App() {
           <button onClick={executeScroll3} id="contact-me-nav" className="btn-nav" type="button">Contact Me</button>
         </div>
       </header> 
-      <ParallaxBanner
-          className="background"
-          layers={[
-              {
-                amount: 0.5,
-              },
-          ]}
-          style={{
-              height: '175px',
-          }}
-      >
-          <div id="intro-box">
-            <div id="opening">Claire Rhoda</div>
-            <div id="opening1">Software Developer</div>
-          </div>
-      </ParallaxBanner>
+      <div id="intro-box">
+        <div id="opening">Claire Rhoda</div>
+        <div id="opening1">Software Developer</div>
+      </div>
       <div ref={info}></div>
       <ParallaxBanner
           className="background1"
@@ -138,26 +119,25 @@ function App() {
               {
                 image: background,
                 amount: 0.5,
-                
               },
           ]}
           style={{
-              height: '600px',
-          }}
-      >
+              height: '550px',
+          }}>
         <div id="about-me-box">
           <div className="profile-container">
             <img src={profile} id="profile-photo" alt="profile"/>
           </div>
           <div className="about-me-container">
-              <div id="description1" >Hello, I'm Claire.</div>
-              <div id="description2">I am a Software Developer and current intern at Apartment 304.</div>
+              <div id="description1" >Hello, I'm a Software Developer and current intern at Apartment 304.</div>
+              <br></br>
+              <br></br>
+              <div id="about-me-description">Mobile Applications Developer</div>
+              <div id="about-me-description">Website Developer</div>
               <br></br>
               <div id="about-me-description"><i class='fas fa-map-marker-alt'></i> &nbsp; Orange County, California</div>
-              <div id="about-me-description">Front-end</div>
-              <div id="about-me-description">App Developer</div>
-              <div id="about-me-description">Website Developer</div>
-              <div id="about-me-description">Cal State Fullerton Student</div>
+              <div id="about-me-description">California State University Student</div>
+
           </div>
         </div>
       </ParallaxBanner>
@@ -167,27 +147,26 @@ function App() {
               {
                 image: background,
                 amount: 0.5,
-                
               },
           ]}
           style={{
               height: 'auto',
               padding: '4rem 0 4rem 0',
-          }}
-      >
+          }}>
         <div id="about-me-box">
           <div className="profile-container">
             <img src={profile} id="profile-photo" alt="profile"/>
           </div>
           <div className="about-me-container">
-              <div id="description1" >Hello, I'm Claire.</div>
-              <div id="description2">I am a Software Developer and current intern at Apartment 304.</div>
+          <div id="description1" >Hello, I'm a Software Developer and current intern at Apartment 304.</div>
+              <br></br>
+              <br></br>
+              <div id="about-me-description">Mobile Applications Developer</div>
+              <div id="about-me-description">Website Developer</div>
               <br></br>
               <div id="about-me-description"><i class='fas fa-map-marker-alt'></i> &nbsp; Orange County, California</div>
-              <div id="about-me-description">Front-end</div>
-              <div id="about-me-description">App Developer</div>
-              <div id="about-me-description">Website Developer</div>
-              <div id="about-me-description">Cal State Fullerton Student</div>
+              <div id="about-me-description">California State University Student</div>
+
           </div>
         </div>
       </ParallaxBanner>
@@ -201,12 +180,11 @@ function App() {
           style={{
               height: 'auto',
               padding: '2rem 0 3rem 0',
-          }}
-      >
+          }}>
         <div id="company-info-box">
           <div className="logo-descrip-container">
             <div id="company-description">
-              Since 2019, Apartment 304 has given me the oppurtunity to work under the guidance of experienced software engineers. 
+              Since 2019, Apartment 304 has given me the opportunity to work under the guidance of experienced software engineers. 
             </div>
             <div className="logo-container">
               <a href="https://www.apartment304.com/">
@@ -220,18 +198,6 @@ function App() {
           </div>
         </div>   
       </ParallaxBanner> 
-        <ParallaxBanner
-          className="divider"
-          layers={[
-              {
-                amount: 0.5,
-              },
-          ]}
-          style={{
-              height: '6px',
-          }}
-      >
-      </ParallaxBanner>
       <div ref={skills}></div>
       <ParallaxBanner
           className="background4"
@@ -243,11 +209,10 @@ function App() {
           style={{
               height: 'auto',
               padding: '2rem 0 2rem 0',
-          }}
-      >
+          }}>
       <div className="skills-box">
           <div className="skills-title-container">
-            <div id="skills-title">Languages</div>
+            <div id="skills-title">LANGUAGES</div>
           </div>
           <div className="img-row">
             <Parallax x={['-40%', '0%']}>
@@ -281,8 +246,6 @@ function App() {
             </div>  
             </Parallax>                
           </div>
-          
-          <div id="divider"></div>
           <div className="github-box">
             <a href="https://github.com/clairerhoda">
               <img id="arc-text" src={arcText} alt="arc text"/>
@@ -302,11 +265,10 @@ function App() {
           style={{
               height: 'auto',
               padding: '1rem 0 1rem 0',
-          }}
-      >
+          }}>
       <div className="skills-box">
           <div className="skills-title-container">
-            <div id="skills-title">Languages</div>
+            <div id="skills-title">LANGUAGES</div>
           </div>
           <div className="img-row">
             <div><img id="code-img" src={html5} alt="html5"/>
@@ -328,7 +290,6 @@ function App() {
               <div id="icon-titles">Dart</div>
             </div>  
           </div>
-          <div id="divider"></div>
           <div className="github-box">
             <a href="https://github.com/clairerhoda">
               <img id="arc-text" src={arcText} alt="arc text"/>
@@ -338,18 +299,6 @@ function App() {
           </div>
       </div>
       </ParallaxBanner> 
-      <ParallaxBanner
-          className="divider1"
-          layers={[
-              {
-                amount: 0.5,
-              },
-          ]}
-          style={{
-              height: '6px',
-          }}
-      >
-      </ParallaxBanner>
       <div ref={contact}></div>
       <ParallaxBanner
           className="background5"
@@ -361,43 +310,30 @@ function App() {
           style={{
               height: 'auto',
               padding: '1rem 0 1rem 0'
-          }}
-      >
+          }}>
               <div id="contact-me-box">
                 <div className="contact-title-container">
-                  <div id="contact-me-title">Contact Me</div>
+                  <div id="contact-me-title">CONTACT ME</div>
                 </div>
                 <div id="contact-row">
                   <div className="email-contents">
-                    <a href="mailto:clairehrhoda@gmail.com">
+                    <a href="mailto:claire@apt304.io">
                       <button id="email-button" type="button"> 
                         <i class="fa fa-envelope" id="email-icon"></i>
-                        &nbsp;&nbsp;Email
+                        &nbsp;&nbsp;email
                       </button>
                     </a>
-                    <div id="email-caption">clairehrhoda@gmail.com</div>
+                    <div id="email-caption">claire@apt304.io</div>
                   </div>
                   <div className="linkedin-contents">
                     <a style={{display:`flex`, flexDirection:`column`, alignItems: `center`, height: `5rem`, justifyContent: `space-between`}}href="https://www.linkedin.com/in/claire-rhoda-96aa1211a/">
                       <img id="linkedin" src={linkedin} alt="linkedin"/>
-                      <div id="linkedin-caption">Linkedin Account</div>
+                      <div id="linkedin-caption">Linkedin Profile</div>
                     </a>
                   </div>
                 </div>
             </div>
       </ParallaxBanner> 
-      <ParallaxBanner
-          className="divider"
-          layers={[
-              {
-                amount: 0.5,
-              },
-          ]}
-          style={{
-              height: '6px',
-          }}
-      >
-      </ParallaxBanner>
       <ParallaxBanner
           className="background6"
           layers={[
@@ -407,15 +343,13 @@ function App() {
           ]}
           style={{
               height: '50px',
-          }}
-      >
+          }}>
         <div className="rights-box">
               © Claire Rhoda. All rights reserved.
               </div>
       </ParallaxBanner> 
       </div>
     </ParallaxProvider>
-
   );
 }
 
