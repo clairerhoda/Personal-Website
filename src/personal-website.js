@@ -1,11 +1,10 @@
 import company_pic from './images/company_pic.jpg'
+import location_icon from './images/location_icon.png'
+import email_icon from './images/email_icon.png'
 import profile from './images/profile.jpg'
-import html5 from './images/html5.png'
-import css from './images/css.png'
-import javascript from './images/javascript.png'
-import cplusplus from './images/c-plus-plus.png'
-import dart from './images/dart.png'
-import flutter from './images/flutter.png'
+import project1 from'./images/project1.png'
+import project2a from'./images/project2a.png'
+import project2b from'./images/project2b.png'
 import github from './images/github.png'
 import arcText2 from './images/troygram2.png'
 import arcText from './images/troygram.png'
@@ -118,7 +117,7 @@ function App() {
           layers={[
               {
                 image: background,
-                amount: 0.5,
+                amount: 1,
               },
           ]}
           style={{
@@ -135,7 +134,7 @@ function App() {
               <div id="about-me-description">Mobile Applications Developer</div>
               <div id="about-me-description">Website Developer</div>
               <br></br>
-              <div id="about-me-description"><i class='fas fa-map-marker-alt'></i> &nbsp; Orange County, California</div>
+              <div id="about-me-description"><img src={location_icon} id="location" alt="location icon"/> Orange County, California</div>
               <div id="about-me-description">California State University Student</div>
 
           </div>
@@ -164,7 +163,7 @@ function App() {
               <div id="about-me-description">Mobile Applications Developer</div>
               <div id="about-me-description">Website Developer</div>
               <br></br>
-              <div id="about-me-description"><i class='fas fa-map-marker-alt'></i> &nbsp; Orange County, California</div>
+              <div id="about-me-description"><img src={location_icon} id="location" alt="location icon"/>Orange County, California</div>
               <div id="about-me-description">California State University Student</div>
 
           </div>
@@ -200,6 +199,58 @@ function App() {
       </ParallaxBanner> 
       <div ref={skills}></div>
       <ParallaxBanner
+          className="background3a"
+          layers={[
+              {
+                amount: 0.5,
+              },
+          ]}
+          style={{
+              height: 'auto',
+              padding: '2rem 0 3rem 0',
+          }}>
+        <div id="skills-box">
+          <div className="skills-title-container">
+            <div id="skills-title">PROJECTS</div>
+          </div>
+          <div className="card-box">
+            <div id="card">
+              <div id="card-contents">
+                <div id="project-title">PORTFOLIO WEBSITE</div>
+                <img id="project1" src={project1} alt="projectJacquelineWebsite"/>
+                <div id="row">
+                  <div id="lang-tag">HTML</div>
+                  <div id="lang-tag">|</div>
+                  <div id="lang-tag">CSS</div>
+                  <div id="lang-tag">|</div>
+                  <div id="lang-tag">JavaScript</div>
+                  <div id="lang-tag">|</div>
+                  <div id="lang-tag">ReactJS</div>
+                </div>
+              </div>
+            </div>
+            <div id="card">
+              <div id="card-contents">
+              <div id="project-title">TEXTRSVP MOBILE APPLICATION</div>
+                <div id="row">
+                  <img id="project2" src={project2a} alt="projectTEXTRSVP"/>
+                  <img id="project2" src={project2b} alt="projectTEXTRSVP"/>
+                </div>
+                <div id="row">
+                  <div id="lang-tag">Flutter</div>
+                  <div id="lang-tag">|</div>
+                  <div id="lang-tag">Dart</div>
+                  <div id="lang-tag">|</div>
+                  <div id="lang-tag">Golang</div>
+                  <div id="lang-tag">|</div>
+                  <div id="lang-tag">PostgreSQL</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>   
+      </ParallaxBanner> 
+      <ParallaxBanner
           className="background4"
           layers={[
               {
@@ -212,83 +263,19 @@ function App() {
           }}>
       <div className="skills-box">
           <div className="skills-title-container">
-            <div id="skills-title">LANGUAGES</div>
+            <div id="skills-title">SKILLS</div>
           </div>
           <div className="img-row">
-            <Parallax x={['-40%', '0%']}>
-            <div><img id="code-img" src={html5} alt="html5"/>
-            <div id="icon-titles">HTML</div>
-            </div>
-            </Parallax>
-            <Parallax  x={['-20%', '0%']}>
-            <div><img id="code-img" src={css} alt="css"/>
-            <div id="icon-titles">CSS</div>
-            </div>
-            </Parallax>
-            <Parallax x={['-5%', '0%']}>
-            <div><img id="code-img" src={javascript} alt="javascript"/>
-              <div id="icon-titles">JavaScript</div>
-            </div>
-            </Parallax>
-            <Parallax x={['5%', '0%']}>
-            <div><img id="code-img" src={cplusplus} alt="c plus plus"/>
-              <div id="icon-titles">C++</div>
-            </div>
-            </Parallax>
-            <Parallax x={['20%', '0%']}>
-            <div><img id="code-img" src={flutter} alt="flutter"/>
-              <div id="icon-titles">Flutter</div>
-            </div>
-            </Parallax>
-            <Parallax x={['40%', '0%']}>
-            <div><img id="code-img" src={dart} alt="dart "/>
-              <div id="icon-titles">Dart</div>
-            </div>  
-            </Parallax>                
-          </div>
-          <div className="github-box">
-            <a href="https://github.com/clairerhoda">
-              <img id="arc-text" src={arcText} alt="arc text"/>
-              <img id="arc-text1" src={arcText1} alt="arc text"/>
-              <img id="github" src={github}  alt="github" />
-            </a>
-          </div>
-      </div>
-      </ParallaxBanner> 
-      <ParallaxBanner
-          className="background4a"
-          layers={[
-              {
-                amount: 0.5,
-              },
-          ]}
-          style={{
-              height: 'auto',
-              padding: '1rem 0 1rem 0',
-          }}>
-      <div className="skills-box">
-          <div className="skills-title-container">
-            <div id="skills-title">LANGUAGES</div>
-          </div>
-          <div className="img-row">
-            <div><img id="code-img" src={html5} alt="html5"/>
-            <div id="icon-titles">HTML</div>
-            </div>
-            <div><img id="code-img" src={css} alt="css"/>
-            <div id="icon-titles">CSS</div>
-            </div>
-            <div><img id="code-img" src={javascript} alt="javascript"/>
-              <div id="icon-titles">JavaScript</div>
-            </div>
-            <div><img id="code-img" src={cplusplus} alt="c plus plus"/>
-              <div id="icon-titles">C++</div>
-            </div>
-            <div><img id="code-img" src={flutter} alt="flutter"/>
-              <div id="icon-titles">Flutter</div>
-            </div>
-            <div><img id="code-img" src={dart} alt="dart "/>
-              <div id="icon-titles">Dart</div>
-            </div>  
+            <div id="code-tab">HTML</div>
+            <div id="code-tab">CSS</div>
+            <div id="code-tab">JavaScript</div>
+            <div id="code-tab">C++</div>
+            <div id="code-tab">Dart</div>
+            <div id="code-tab">Flutter</div>
+            <div id="code-tab">ReactJS</div>
+            <div id="code-tab">PostgreSQL</div>
+            <div id="code-tab">Golang</div>
+            <div id="code-tab">Python</div>
           </div>
           <div className="github-box">
             <a href="https://github.com/clairerhoda">
@@ -319,8 +306,8 @@ function App() {
                   <div className="email-contents">
                     <a href="mailto:claire@apt304.io">
                       <button id="email-button" type="button"> 
-                        <i class="fa fa-envelope" id="email-icon"></i>
-                        &nbsp;&nbsp;email
+                      <img src={email_icon} id="email-icon" alt="email icon"/>
+                       email
                       </button>
                     </a>
                     <div id="email-caption">claire@apt304.io</div>

@@ -27,6 +27,12 @@ button:focus {
   width: 50%;
 }
 
+#location {
+  width: 8.5px;
+  filter: brightness(200%);
+  padding-right: 3px;
+
+}
 #name{
   display: flex;
   color: rgb(0, 0, 0);
@@ -90,8 +96,15 @@ button:focus {
   z-index: 0;
   align-items: center;
   justify-content: center;
+  background-color: rgb(255, 255, 255);
+}
+.background3a{
+  display: flex;
+  position: relative;
+  z-index: 0;
+  align-items: center;
+  justify-content: center;
   background-color: rgb(231, 233, 236);
-  border-bottom: 2px solid rgb(255, 255, 255);
 }
 
 .background4{
@@ -101,18 +114,8 @@ button:focus {
   align-items: center;
   justify-content: center;
   background-color: rgb(255, 255, 255);
-  border-bottom: 2px solid rgb(255, 255, 255);
 }
 
-.background4a{
-  display: flex;
-  position: relative;
-  z-index: 0;
-  align-items: center;
-  justify-content: center;
-  background-color: rgb(255, 255, 255);
-  border-bottom: 2px solid rgb(255, 255, 255);
-}
 
 .background5{
   display: flex;
@@ -121,7 +124,6 @@ button:focus {
   align-items: center;
   justify-content: center;
   background-color: rgb(231, 233, 236);
-  border-bottom: 2px solid rgb(255, 255, 255);
 }
 
 .background6{
@@ -186,7 +188,6 @@ button:focus {
   width: 250px;
   align-items: center;
   justify-content: center;
-  border : 2px solid black;
 }
 
 .about-me-container{
@@ -257,6 +258,7 @@ button:focus {
 #work-logo{
   width: 10rem;
   margin-bottom: 3rem;
+  filter: drop-shadow(0 0 10px rgb(161, 161, 161));
 }
 
 #arc-text2{
@@ -278,7 +280,68 @@ button:focus {
 .work-photo{
   width: 25rem;
   height: 100%;
-  border : 2px solid black;
+}
+
+.card-box {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  flex-direction: row;
+}
+
+#card {
+  display: flex;
+  flex-direction: row;
+  height: 500px;
+  background: rgb(255, 255, 255);
+  align-items: center;
+  margin: 10px;
+}
+
+#card-contents{
+  display: flex;
+  flex-direction: column;
+  background: rgb(255, 255, 255);
+  width: 580px;
+  align-items: center;
+}
+
+#project-title{
+  color: rgb(48, 47, 47);
+  font-weight: 500;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 16px;
+  z-index: 1;
+  margin-bottom: 20px;
+}
+
+#row {
+  display: flex;
+  flex-direction: row;
+}
+
+#lang-tag {
+  display: flex;
+  padding: 3px 5px 3px 5px;
+  border-radius: 3px;
+  color: rgb(114, 114, 114);
+  font-weight: 300;
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 14px;
+  z-index: 1;
+  margin: 20px 5px 0 5px;
+}
+
+#project1 {
+  width: 540px;
+  filter: drop-shadow(0px 0px 20px #00000046);
+}
+#project2 {
+  display: flex;
+  height: 370px;
+  filter: drop-shadow(0px 0px 20px #00000046);
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .skills-box{
@@ -309,6 +372,16 @@ button:focus {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+#code-tab {
+  border: 1px solid rgb(170, 170, 170);
+  border-radius: 5px;
+  margin: 10px;
+  padding: 10px;
+  color: rgb(65, 65, 65);
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 300;
 }
 
 #code-img {
@@ -427,11 +500,20 @@ button:focus {
   background-color: rgb(255, 255, 255);
   height: 2.5rem;
   width: 7rem;
-  color: rgb(201, 206, 211);
+  color: rgb(134, 134, 134);
   font-size: 1rem;
   font-weight: 400;
   font-family: 'Libre Franklin', sans-serif;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#email-icon {
+  width: 25px;
+  filter: contrast(1%);
+  padding-right: 5px;
 }
 
 #email-button:hover{
@@ -506,6 +588,9 @@ button:focus {
   #about-me-box{width: 90%;}
   #company-info-box{width: 90%}
   #contact-me-box{width: 90%}
+
+  #card-contents{width: 500px;}
+  #project1 {width: 450px;}
 }
 
 @media (max-width:850px) {
@@ -515,15 +600,16 @@ button:focus {
   .work-photo{width: 21rem;}
 }
 
-@media(min-width: 1111px){
-  .background4{display: flex}
-  .background4a{display: none}
-}
-
 @media (max-width:1110px) {
   #intro-box{align-items: flex-start; text-align: start;}
-  .background4{display: none}
-  .background4a{display: flex}
+}
+
+@media (max-width:1050px){
+  #card{height: 600px; margin-bottom: 10px;}
+  .card-box {flex-direction: column;}
+  #card-contents{width: 600px;}
+  #project1{width: 550px;}
+  #project2{height: 400px;}
 }
 
 @media(min-width: 701px){
@@ -557,13 +643,21 @@ button:focus {
   .button-nav {display:none;}
 } 
 
+@media (max-width: 630px) {
+  #card{height: 500px;}
+  #card-contents{width: 500px;}
+  #project1{width: 400px;}
+  #project2{height: 350px;}
+}
 @media (max-width:570px) {
   #contact-row{flex-direction: column; height: 15rem}
   .linkedin-contents {margin-top: 1rem;}
+  #card-contents{width: 450px;}
 }
 
 @media (max-width: 400px){
   #company-info-box{width: 80%; height: auto;}
   .img-pic-container{width: 100%;}
   .work-photo{width: 20rem; height: 17rem; }
+  #card-contents{width: 400px;}
 }
