@@ -12,14 +12,13 @@ import arcText1 from './images/troygram1.png'
 import background from './images/background.jpg'
 import linkedin from'./images/linkedin.png'
 
-import { ParallaxProvider, Parallax, ParallaxBanner} from 'react-scroll-parallax';
+import { ParallaxProvider, ParallaxBanner} from 'react-scroll-parallax';
 import React, { useEffect, useState} from 'react';
 import './personal-website.css';
 import {elementGet, addEvent} from './personal-website-animate.js';
 
 function App() {
   const info = useState(null)
-  const company = useState(null)
   const skills = useState(null)
   const contact = useState(null)
   const executeScroll1 = () => {
@@ -218,7 +217,7 @@ function App() {
               <div id="card-contents">
                 <div id="project-title">PORTFOLIO WEBSITE</div>
                 <img id="project1" src={project1} alt="projectJacquelineWebsite"/>
-                <div id="row">
+                <div id="row-tags">
                   <div id="lang-tag">HTML</div>
                   <div id="lang-tag">|</div>
                   <div id="lang-tag">CSS</div>
@@ -236,7 +235,7 @@ function App() {
                   <img id="project2" src={project2a} alt="projectTEXTRSVP"/>
                   <img id="project2" src={project2b} alt="projectTEXTRSVP"/>
                 </div>
-                <div id="row">
+                <div id="row-tags">
                   <div id="lang-tag">Flutter</div>
                   <div id="lang-tag">|</div>
                   <div id="lang-tag">Dart</div>
